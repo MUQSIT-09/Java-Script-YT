@@ -10,7 +10,7 @@ let accountstate;
 acoountemail = "hdfc@gmail.com"
 accountpass = "4352"
 accountCity = "Kishanganj"
-
+// for accountcity not given any variable but it will get a memeory by js to store which is not a good practice
 console.log(accountstate);
 
 // can print all together in table format using console.table([]);
