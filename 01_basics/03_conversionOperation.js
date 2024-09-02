@@ -55,8 +55,10 @@ let str3 = str1 + str2
 
 // console.log( (3 + 4) * 5 % 3);
 
-// console.log(+true);
+// console.log(+true);  
+// 1 we will get the output
 // console.log(+"");
+// 0 we will get the output
 
 let num1, num2, num3
 
