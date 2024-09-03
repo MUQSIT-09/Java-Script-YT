@@ -67,6 +67,6 @@ console.log("B ", myArr); //B  [ 0, 1, 2, 3, 4, 5 ]
 console.log("A ", myArr); //A  [ 0, 1, 2, 3, 4, 5 ]
 
 const myn2 = myArr.splice(1, 3)
-console.log("C ", myArr); //C  [ 0, 4, 5 ] --> here teh original array gets changed while performing splice thats' teh main diff b/w slice and splice
+console.log("C ", myArr); //C  [ 0, 4, 5 ] --> here the original array gets changed while performing splice thats' the main diff b/w slice and splice
 console.log(myn2); //[ 1, 2, 3 ]
 
