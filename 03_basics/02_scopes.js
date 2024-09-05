@@ -26,3 +26,49 @@ if (true) {
 console.log(a);  // 365 --> even if a,b is changed inside the if it will remain it's global value which is intialized before if.
 console.log(b);  // 2
 console.log(c);  // 300  ----> if inside the if the c value is changed then that value(3) is printed here as it becomes global.
+
+
+
+// We can understand this terminolgy as parent and child (asking for ice cream), child can access parent things but parent can't access child varibles(things).
+function one(){
+    const username = "Tech"
+
+    function two(){
+        const website = "youtube"
+        console.log(username);
+    }
+    console.log(website); //--> o/p:ReferenceError: website is not defined , scope is outside the function.
+    two() 
+
+}
+
+one() // Tech
+
+if (true) {
+    const city = "Azerbaijan"
+    if (city === "Azerbaijan") {
+        const capital = " Baku"
+        console.log(city + capital);
+    }
+    console.log(capital); //Gives a error as it is not accessable,because out of if scope, capital is inside if.
+}
+
+console.log(city); //Gives a error as it is not accessable,because out of if scope, city is inside if.
+
+
+// ++++++++++++++++++ interesting ++++++++++++++++++
+
+
+console.log(addone(5)) //----> o/p = 6 , we can declare like this as we are not storing function on any variable
+
+function addone(num){
+    return num + 1
+}
+
+
+
+// addTwo(5) ======> we can't declare like this it is known as hoisting in js which gives an array,as we are crating a function in const variable.
+const addTwo = function(num){
+    return num + 2
+}
+console.log(addTwo(5)) // op==7 ----> We can write below the function decalre by the constant variable and then call.
