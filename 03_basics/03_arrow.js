@@ -57,16 +57,16 @@ const addTwo = (num1, num2) => {
 console.log(addTwo(3,4)) //7
 
 // Implicit return - No need to have paranthesis, remove return keyword also , it's same in react also.
-const addTwo = (num1, num2) =>  num1 + num2
+// const addTwo = (num1, num2) =>  num1 + num2
 
-const addTwo = (num1, num2) => ( num1 + num2 ) // 7
+// const addTwo = (num1, num2) => ( num1 + num2 ) // 7
 
-// returning an object:
+// // returning an object:
 
-const addTwo = (num1, num2) => {username: "hitesh"} //undefined
+// const addTwo = (num1, num2) => {username: "hitesh"} //undefined
 
-// returning an object: it should we wrapped in paranthesis only.
-const addTwo = (num1, num2) => ({username: "hitesh"}) //{ username: 'hitesh' }
+// // returning an object: it should we wrapped in paranthesis only.
+// const addTwo = (num1, num2) => ({username: "hitesh"}) //{ username: 'hitesh' }
 
 
 console.log(addTwo(3, 4)) // 7
