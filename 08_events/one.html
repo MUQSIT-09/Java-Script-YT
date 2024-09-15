@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // These are not the good practice (outdated).
+    // document.getElementById('owl').onclick = function(){
+      alert("owl clicked")
+       }
+
+    attachEvent()
+    jQuery - on
+
+    type, timestamp, defaultPrevented
+    target, toElement, srcElement, currentTarget,
+    clientX, clientY, screenX, screenY
+    altkey, ctrlkey, shiftkey, keyCode
+
+    This the Modern way technique: you can give all the three parameter or the last parameter is default always false:
+    Here there are Two ways of EventPropagation:
+    1. Bubling    ==> From inside to outside in this case first li then ul if you click both the things togrther li --> ul
+    2. Capturing  ==> From outside to inside (or) top to bottom ex: ul --> li. (when the parameter is true)
+    
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");
+        e.stopPropagation() // Event will get buubled and then go further towards outside.
+    }, false)
+    // Event will get Capturing and then go further towards inside /bottom.
+
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation() // if we have stopPropagation then we get the o.p --> google clicked.
+        console.log("google clicked"); // o/p -->  clicked inside google, google clicked.
+    }, false)
+   
+    
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+    // Another Method:
+        removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
+
+// Mostly you will get browser and environment Events, and bubling is used the mosy.
+
+// Summary:
+Here’s a breakdown of the terms you've mentioned, commonly used in JavaScript, especially in event handling:
+
+1.type:
+
+This property returns the type of event (e.g., click, keydown, mouseover).
+Example: event.type will return 'click' if a click event occurred.
+
+2.timestamp:
+
+This property returns the time (in milliseconds) at which the event was created. It helps in tracking when an event occurred.
+Example: event.timestamp could return 1626873245321.
+
+3.defaultPrevented:
+
+A boolean property that indicates whether the event's default behavior has been prevented.
+Example: event.defaultPrevented returns true if event.preventDefault() has been called to prevent the default action.
+
+4.target:
+
+This property returns a reference to the element that triggered the event (the originating element).
+Example: event.target could refer to a button if that button was clicked.
+
+5.toElement (Deprecated):
+
+This property is used during a mouseover or mouseout event and refers to the element the pointer is moving to.
+Example: event.toElement during a mouseout event tells which element the mouse is moving toward.
+
+6.srcElement (Deprecated):
+
+Similar to target, it returns the element that initiated the event. It's the older version of target but still supported in some browsers.
+Example: event.srcElement.
+
+7.currentTarget:
+
+This returns the element that is currently handling the event. It can differ from target if event delegation is used.
+Example: event.currentTarget could be the parent element if event delegation is used, even if a child element triggered the event.
+
+8.clientX & clientY:
+
+These properties return the horizontal (clientX) and vertical (clientY) coordinates of the
+ mouse pointer relative to the visible part of the web page (the viewport).
+Example: event.clientX returns the X-coordinate, and event.clientY returns the Y-coordinate.
+
+9.screenX & screenY:
+
+These properties return the horizontal (screenX) and vertical (screenY) coordinates of 
+the mouse pointer relative to the user's screen.
+Example: event.screenX gives the X-coordinate on the screen.
+
+10.altKey, ctrlKey, shiftKey:
+
+These boolean properties indicate whether the Alt, Ctrl, or Shift key was pressed during the event.
+Example: event.altKey will return true if the Alt key was pressed during a click or keyboard event.
+
+11.keyCode (Deprecated):
+
+This property returns the numeric code of the key pressed. It's deprecated in favor of event.code or event.key.
+Example: event.keyCode could return 13 for the Enter key.
+
+These properties help track various aspects of user interactions with the page, such as mouse clicks, 
+key presses, and the specific elements involved in those interactions.
