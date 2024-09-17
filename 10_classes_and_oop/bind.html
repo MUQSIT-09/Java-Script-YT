@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    // *** When you use bind(), you're telling JavaScript what the this keyword should refer to inside a function, no matter how or where that function is called.***
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
+
+
+
+<!–-
+What is happening step by step:
+Class Definition: The React class is defined with two properties: library and server. The server stores a URL (https://localhost:300), and library stores the string "React".
+
+Event Listener in the Constructor:
+
+Inside the constructor, the event listener is added to the button using document.querySelector('button').
+addEventListener('click', this.handleClick.bind(this)) attaches the handleClick method to the button’s click event.
+Using bind(this):
+
+this.handleClick.bind(this) ensures that when the handleClick method is executed upon the button click, the this keyword inside handleClick refers to the instance of the React class.
+Without bind(this), this inside handleClick would not refer to the React instance, and it might refer to the button or even be undefined depending on how the function is called. This would break the code when trying to access this.server.
+Button Click:
+
+When the button is clicked, the handleClick() function is called, and thanks to bind(this), the function is aware that this refers to the current instance of the React class.
+The function logs "button clicked" and the value of this.server (which is "https://localhost:300").
+
+
+
+
+-->
