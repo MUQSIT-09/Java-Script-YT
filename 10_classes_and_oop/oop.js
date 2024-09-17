@@ -45,7 +45,7 @@ console.log(userTwo);   // o/p --> User{username: 'ChaiAurCode',loginCount: 11,i
 
 
 // As we wre using new keyword it will create an new instance and store only the useer data in it other data will be avoided.
-const userOne = new User("hitesh", 12, true)
-const userTwo = new User("ChaiAurCode", 11, false)
+// const userOne = new User("hitesh", 12, true)
+// const userTwo = new User("ChaiAurCode", 11, false)
 console.log(userOne.constructor);   // o/p ---> [Function: User]
 console.log(userTwo);              // o/p ----> User {username: 'ChaiAurCode', loginCount: 11, isLoggedIn: false,greeting: [Function (anonymous)]}

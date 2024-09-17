@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,36 +22,36 @@
     // These are not the good practice (outdated).
     // document.getElementById('owl').onclick = function(){
       alert("owl clicked")
-       }
+      // }
 
-    attachEvent()
-    jQuery - on
+    // attachEvent()
+    // jQuery - on
 
-    type, timestamp, defaultPrevented
-    target, toElement, srcElement, currentTarget,
-    clientX, clientY, screenX, screenY
-    altkey, ctrlkey, shiftkey, keyCode
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
 
-    This the Modern way technique: you can give all the three parameter or the last parameter is default always false:
-    Here there are Two ways of EventPropagation:
-    1. Bubling    ==> From inside to outside in this case first li then ul if you click both the things togrther li --> ul
-    2. Capturing  ==> From outside to inside (or) top to bottom ex: ul --> li. (when the parameter is true)
+    // This the Modern way technique: you can give all the three parameter or the last parameter is default always false:
+    // Here there are Two ways of EventPropagation:
+    // 1. Bubling    ==> From inside to outside in this case first li then ul if you click both the things togrther li --> ul
+    // 2. Capturing  ==> From outside to inside (or) top to bottom ex: ul --> li. (when the parameter is true)
     
-    document.getElementById('images').addEventListener('click', function(e){
-        console.log("clicked inside the ul");
-    }, false)
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
 
-    document.getElementById('owl').addEventListener('click', function(e){
-        console.log("owl clicked");
-        e.stopPropagation() // Event will get buubled and then go further towards outside.
-    }, false)
-    // Event will get Capturing and then go further towards inside /bottom.
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation() // Event will get buubled and then go further towards outside.
+    // }, false)
+    //  Event will get Capturing and then go further towards inside /bottom.
 
-    document.getElementById('google').addEventListener('click',function(e){
-        e.preventDefault();
-        e.stopPropagation() // if we have stopPropagation then we get the o.p --> google clicked.
-        console.log("google clicked"); // o/p -->  clicked inside google, google clicked.
-    }, false)
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation() // if we have stopPropagation then we get the o.p --> google clicked.
+    //     console.log("google clicked"); // o/p -->  clicked inside google, google clicked.
+    // }, false)
    
     
     document.querySelector('#images').addEventListener('click', function(e){
@@ -132,3 +131,5 @@ Example: event.keyCode could return 13 for the Enter key.
 
 These properties help track various aspects of user interactions with the page, such as mouse clicks, 
 key presses, and the specific elements involved in those interactions.
+
+
