@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Two Html Events</title>
 </head>
 <body>
-    <h1>Chai aur code</h1>
-    <button id="stop">Stop</button>
+    <h1>CMR Institue Of Technology</h1>
+    <button id="stop"> STOP </button>
 </body>
 <script>
-    const sayHitesh = function(){
-        console.log("Hitesh");
+    const cmrcet=function(){
+        console.log("CMR College Of Technology");
     }
-    const changeText = function(){
-        document.querySelector('h1').innerHTML = "best JS series"
+    const change=function(){
+        document.querySelector('h1').innerHTML="Wanna be Top 10 clg in HYD"
     }
-
-    const changeMe = setTimeout(changeText, 2000)
-
+    // setTimeout(cmrcet,2000); //Change The text to cmrcet after 2 secounds 
+    // Now we can use cleartimeout to stop that particular event to occur: 
+    // basically settimeout is in task queue and then clear timeout goes and 
+    // removes the settimeout from the queue if we apply some events, if we won't applyevent then it gets changed.
+    const changeme=setTimeout(change,2000);
     document.querySelector('#stop').addEventListener('click', function(){
-        clearTimeout(changeMe)
-        console.log("STOPPED")
+        clearTimeout(changeme)
+        console.log("THE CHANGES HAVE BEEN STOPPED");
+        
     })
 </script>
 </html>
