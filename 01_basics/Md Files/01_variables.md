@@ -67,6 +67,7 @@ const accountId = 64312;
 let accountEmail = "javascript@gmail.com";
 var accountPass = "2748";
 accountCity = "Hyderabad";  // Not a good practice (implicit global)
+// For accountcity not given any variable but it will get a memeory by js to store which is not a good practice
 let accountState;
 
 // Updating variables
@@ -75,7 +76,7 @@ accountPass = "4352";
 accountCity = "Kishanganj";
 
 // Console outputs
-console.log(accountCity);   // Output: Kishanganj
+console.log(accountCity);   // Output: Kishanganj Will be printed when we use in node in other online compiler it will be ReferenceError: accountcity is not defined.
 console.log(accountState);  // Output: undefined
 
 // Displaying in table format
