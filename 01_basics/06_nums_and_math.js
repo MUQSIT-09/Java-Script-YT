@@ -4,34 +4,34 @@ console.log(score); // 400
 const balance = new Number(100) // Using Number Function to explicitly define number in JS
 console.log(balance); // [Number: 100]
 
-console.log(balance.toString().length);
-console.log(balance.toFixed(1));
+console.log(balance.toString().length);   // 3
+console.log(balance.toFixed(1));          // 100.0
 
 // Note: Number has comparatively less prototype properties (methods) than String
 
 //Methods with examples:
 // 1. balance.toString() // This converts a number into string
-// 2. balance.toString().length // Once we convert it to String, all properties / methods of Strings are now open to us, such as length
+// 2. balance.toString().length // Once we convert it to String, all properties/methods of Strings are now open to us, such as length
 // 3. balance.toFixed(2) // Used to reduce or round of to specific decimal values
 //     - Use Cases 
 //         a. After calculation of GST
 //         b. In Ecommerce website
 
 const otherNumber1 = 124.8966 
-console.log(otherNumber1.toPrecision(3));
+console.log(otherNumber1.toPrecision(3));   // 125
 
 const otherNumber = 23.8966
 otherNumber.toPrecision(3) // Output - 23.9
-otherNumber = 123.8966
-otherNumber.toPrecision(3) // Output - 124    
-otherNumber = 1123.8966
-otherNumber.toPrecision(3) // Output - 1.12e+3 (exponential value)
+// otherNumber = 123.8966
+// otherNumber.toPrecision(3) // Output - 124    
+// otherNumber = 1123.8966
+// otherNumber.toPrecision(3) // Output - 1.12e+3 (exponential value)
 
 const hundreds = 1000000
-// hundreds.toLocalString() // By default it converts into US standards
+// hundreds.toLocalString() //  By default it converts into US standards
 // hundreds.toLocalString('en-IN') // As per Indian Standards
 
-console.log(hundreds.toLocaleString('en-IN'));
+console.log(hundreds.toLocaleString('en-IN'));  // 10,00,000
 
 // 6. Other methods
 //     .MAX_VALUE
