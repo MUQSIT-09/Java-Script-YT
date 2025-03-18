@@ -25,14 +25,15 @@ const obj4 = {5: "a", 6: "b"}
 
 // Concatination
 const obj33 = { obj1, obj2 } 
-console.log(obj33); // { obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' } } will become the two obj1,2 in obj33.
+console.log(obj33); // { obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' } } will become the two object of obj1,2 in obj33.
+
 // Another ways which is correct to do, which will not have 2d like structure this is correct way of concatination of many objects.
 const obj31 = Object.assign({}, obj1, obj2, obj4)  // {}---> This is to ensure we are adding in new obj3 not in obj1 (if it is removed)
 console.log(obj31); // { '1': 'a', '2': 'b', '3': 'a', '4': 'b', '5': 'a', '6': 'b' }
+
 //Spread Operator:
 const obj3 = {...obj1, ...obj2}
-// console.log(obj3); // { '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
-
+console.log(obj3); // { '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
 
 const users = [
     {
@@ -50,14 +51,14 @@ const users = [
 ]
 
 users[1].email
-console.log(users[1].email); //h@gmail.com
-console.log(tinderUser); //{ id: '123abc', name: 'Sammy', isLoggedIn: false }
+console.log(users[1].email);  //h@gmail.com
+console.log(tinderUser);      //{ id: '123abc', name: 'Sammy', isLoggedIn: false }
 
-console.log(Object.keys(tinderUser)); //[ 'id', 'name', 'isLoggedIn' ]
-console.log(Object.values(tinderUser));  // [ '123abc', 'Sammy', false ]
-console.log(Object.entries(tinderUser)); // [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
+console.log(Object.keys(tinderUser));     //[ 'id', 'name', 'isLoggedIn' ]
+console.log(Object.values(tinderUser));   // [ '123abc', 'Sammy', false ]
+console.log(Object.entries(tinderUser));  // [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn')); //true
+console.log(tinderUser.hasOwnProperty('isLoggedIn'));  //true
 
 
 const course = {
@@ -70,18 +71,18 @@ const course = {
 
 const {courseInstructor: instructor} = course
 // courseInstructor = instructor (is converted to instructor name for easy usage and clean code writing)
-// console.log(courseInstructor); //hayat
+console.log(courseInstructor); //hayat
 console.log(instructor); //hayat
 
 // {
 //     "name": "haya",
 //     "coursename": "js in hindi",
 //     "price": "free"
-// }   ---> This a json which is having the objects (can be used to retrive data with the help of API).
+// }  // ---> This a json which is having the objects (can be used to retrive data with the help of API).
 
 
 [
     {},
     {},
     {}
-]  //   ----> Thsi a json which is having the Array (can be used to retrive data with the help of API).
+]   //   ----> This a json which is having the Array (can be used to retrive data with the help of API).
