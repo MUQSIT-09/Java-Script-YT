@@ -42,7 +42,6 @@
 - Keeps variables private and avoids polluting the global namespace.
 - Handy for database connections, initialization, and setup code.
 
-![JavaScript Logo](https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png)
 
 Happy Coding! 🚀
 
