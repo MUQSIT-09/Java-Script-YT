@@ -102,7 +102,6 @@ myArray.forEach((item) => console.log(item));
 - Arrow functions don't have their own `this`.
 - Use implicit returns for cleaner code.
 
-![JavaScript Logo](https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png)
 
 Happy Coding! 🚀
 
