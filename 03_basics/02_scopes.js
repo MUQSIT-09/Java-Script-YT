@@ -1,11 +1,11 @@
-// Scope of var.let,const
+Scope of var.let,const
 
 // 1. const : once it is created and intialzed it will not be changed.
 // 2. var,let   : var,let value will be changed if you want.
 // 3. All there variables inside teh function and outside is global.
 // 4. But if you create a var inside if/while/else/elseif... then var becomes global and the value gets changed as mentioned below value will get 3.
 
-//  *** Avoid using var, you can prefer const and let, most preferred let as it can be changed in some cases when needed. *** 
+ *** Avoid using var, you can prefer const and let, most preferred let as it can be changed in some cases when needed. *** 
 var c = 300
 let a = 365
 const b = 2
