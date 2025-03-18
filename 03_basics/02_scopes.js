@@ -1,4 +1,4 @@
-Scope of var.let,const
+// Scope of var.let,const
 
 // 1. const : once it is created and intialzed it will not be changed.
 // 2. var,let   : var,let value will be changed if you want.
