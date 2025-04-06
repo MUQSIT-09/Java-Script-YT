@@ -220,7 +220,7 @@ Add this in your HTML `<head>`:
 ## 📸 Resources and Visuals
 
 - [Event Delegation - MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
--
+
 
 ---
 
