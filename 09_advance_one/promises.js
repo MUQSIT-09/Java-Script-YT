@@ -4,58 +4,58 @@
 // It passes the reason (an error or failure message) to the .catch() block.(handles failure.)
 
 const promiseone = new Promise(function (resolve,reject) {
-    //Do an async task
-   // DB calls, cryptography, network
-   setTimeout(function () {
-       console.log('Async task is completed');
-       resolve()
-   },1000)  
+   //Do an async task
+  // DB calls, cryptography, network
+  setTimeout(function () {
+      console.log('Async task is completed');
+      resolve()
+  },1000)  
 })
 promiseone.then(function(){
-   console.log("Promise consumed");
+  console.log("Promise consumed");
 })
 
 // Without declarring into an const:
 new Promise(function(resolve,reject){
-   setTimeout(function(){
-       console.log("Async task 2");
-       resolve()
-   }, 1000)
+  setTimeout(function(){
+      console.log("Async task 2");
+      resolve()
+  }, 1000)
 
 }).then(function(){
-   console.log("promise 2 completed");
+  console.log("promise 2 completed");
 })
 
 
 //  Sending the parameters:
 const promisethree=new Promise(function(resolve,reject){
-   setTimeout(function(){
-       resolve({name:"azam",almamatters:"PHD"});
-   },2000)
+  setTimeout(function(){
+      resolve({name:"azam",almamatters:"PHD"});
+  },2000)
 })
 promisethree.then((name)=>{
-   console.log(name);
+  console.log(name);
 })
 
 // Now taking the case of reject(catch) also:
 const promisefour=new Promise(function(resolve,reject){
-   setTimeout(function(){
-       let error = false
-       if (!error) {
-           resolve({person:"Nida",Age:"23"});
-       } else {
-           reject('ERROR: Something went wrong')
-       }
-   },1500)
+  setTimeout(function(){
+      let error = false
+      if (!error) {
+          resolve({person:"Nida",Age:"23"});
+      } else {
+          reject('ERROR: Something went wrong')
+      }
+  },1500)
 })
 //  If i want only the person name:we can't declare the const and access the msg.personname for that we need to chainning.
 promisefour.then((msg)=>{
-   console.log(msg);        // o/p -----> { person: 'Nida', Age: '23' }
-   return msg.personname;   // for doing chainnging we need this return statement as we are sending this to next then. 
+  console.log(msg);        // o/p -----> { person: 'Nida', Age: '23' }
+  return msg.personname;   // for doing chainnging we need this return statement as we are sending this to next then. 
 }).then((personname)=>{
-   console.log(personname); // o/p ------> Nida.
+  console.log(personname); // o/p ------> Nida.
 }).catch((error)=>{
-   console.log(error);
+  console.log(error);
 }).finally(() => console.log("The promise is either resolved or rejected"))
 
 
@@ -67,25 +67,31 @@ promisefour.then((msg)=>{
 //  even if it doesn't explicitly return one. It allows you to use await inside the function.
 // await: await is used inside an async function to pause the execution of the code until the promise is resolved. 
 // It's like saying, "Wait for this promise to finish, then move on."
+// Can keep await on Async function only
+
+// Scenario
+// Prepare URL/API EndPoint => sync
+// await // fetch data --> network call => Async
+// Process Data => sync
 
 const promiseFive = new Promise(function(resolve, reject){
-   setTimeout(function(){
-       let error = false
-       if (!error) {
-           resolve({username: "javascript", password: "123"})
-       } else {
-           reject('ERROR: JS went wrong')
-       }
-   }, 1000)
+  setTimeout(function(){
+      let error = false
+      if (!error) {
+          resolve({username: "javascript", password: "123"})
+      } else {
+          reject('ERROR: JS went wrong')
+      }
+  }, 1000)
 });
 
 async function consumePromiseFive(){
-   try {
-       const response = await promiseFive
-       console.log(response);  // { username: 'javascript', password: '123' }
-   } catch (error) {
-       console.log(error); //ERROR: JS went wrong
-   }
+  try {
+      const response = await promiseFive
+      console.log(response);  // { username: 'javascript', password: '123' }
+  } catch (error) {
+      console.log(error); //ERROR: JS went wrong
+  }
 }
 
 consumePromiseFive()
@@ -113,12 +119,28 @@ consumePromiseFive()
 // *fetched data from github/hiteshchowdhary will come first in output other then the above code functions.
 fetch('https://api.github.com/users/hiteshchoudhary')
 .then((response) => {
-   return response.json()
+  return response.json()
 })
 .then((data) => {
-   console.log(data);
+  console.log(data);
 })
 .catch((error) => console.log(error))
 
 // promise.all
 // yes this is also available, kuch reading aap b kro.
+
+async function getdata() {
+  // get request - async
+  let response = await fetch('https://api.github.com/users/hiteshchoudhary');
+  // parse json - async
+  let dataprocessed = await response.json();
+  console.log(dataprocessed);
+}
+
+// ✳️ fetch() is asynchronous
+// fetch() returns a Promise, not the actual response immediately.
+
+// So, without await, response is a Promise object, not a Response object.
+
+// let response = fetch(...)	response is a Promise	Add await before fetch
+// await response.json()	Calling .json() on a Promise	Only valid on actual response.
