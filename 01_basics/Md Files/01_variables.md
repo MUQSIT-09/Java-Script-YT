@@ -12,7 +12,7 @@ In JavaScript, variables are used to store data values. Initially, `var` was the
 
 **Example:**
 ```javascript
-console.log(phu);  // ReferenceError: phu is not defined
+console.log(phu);  // undefined
 {
     var lingi = 31;
     var phu = 3;
