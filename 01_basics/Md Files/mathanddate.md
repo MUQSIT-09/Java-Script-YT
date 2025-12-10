@@ -46,7 +46,7 @@ let date = new Date('Sep 9 2004 06:18');
 console.log(date);          // 2004-09-09T06:18:00.000Z
 
 let newdate = new Date(2002,5,4,8); // June 4, 2002, at 08:00
-console.log(newdate);
+console.log(newdate);  // 2002-06-04T08:00:00.000Z
 console.log(newdate.getFullYear());  // 2002
 ```
 
