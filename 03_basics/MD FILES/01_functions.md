@@ -14,7 +14,7 @@ A function declaration defines a named function with the `function` keyword.
 ```javascript
 // Function Declaration                                                                            
 
-sayMyName() (Hoisted function called before declaration)  <--------------------------------------
+sayMyName() (Hoisted, function called before declaration)  <-------------------------------------
                                                                                                 | 
 function sayMyName() {                                                                          |
     console.log("H");                                                                           |
