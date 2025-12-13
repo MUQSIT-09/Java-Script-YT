@@ -12,17 +12,19 @@ Functions are reusable blocks of code designed to perform a particular task. The
 ## 🟩 1. Function Declaration
 A function declaration defines a named function with the `function` keyword.
 ```javascript
-// Function Declaration
-function sayMyName() {
-    console.log("H");
-    console.log("I");
-    console.log("T");
-    console.log("E");
-    console.log("S");
-    console.log("H");
-}
+// Function Declaration                                                                            
 
-sayMyName();
+sayMyName() (Hoisted function called before declaration)  <--------------------------------------
+                                                                                                | 
+function sayMyName() {                                                                          |
+    console.log("H");                                                                           |
+    console.log("I");                                                                           |
+    console.log("T");                                                                           |
+    console.log("E");                                                                           |
+    console.log("S");                                                                           |
+    console.log("H");                                                                           |
+                                                                                                |
+sayMyName();  // Function Call it is hoisted moved to top, called before declaration  ---------->
 // Output:
 // H
 // I
